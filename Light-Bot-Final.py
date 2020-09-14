@@ -4,8 +4,8 @@
 
 
 #adafruit part
-X = "tarunsridhara21"                     # ADAFRUIT_IO_USERNAME
-Y = "aio_pbid93ATZYbGiVcuuvDPhapjXbIv"    # ADAFRUIT_IO_KEY
+X = os.getenv('X')                     # ADAFRUIT_IO_USERNAME
+Y = os.getenv('Y')                     # ADAFRUIT_IO_KEY
 
 from Adafruit_IO import Client, Feed
 aio = Client(X,Y)
