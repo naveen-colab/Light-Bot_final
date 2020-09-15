@@ -60,7 +60,7 @@ def chooser(bot,update):
                 
                 
 def main():
-  BOT_TOKEN= '1359570647:AAGqrbWWBWa2DDn4uKD39UHACCzDHPMNYpo'
+  BOT_TOKEN= os.getenv("BOT_TOKEN")
   u = Updater(BOT_TOKEN, use_context=True)
   dp = u.dispatcher
   dp.add_handler(MessageHandler(Filters.text, chooser))
