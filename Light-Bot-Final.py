@@ -1,5 +1,4 @@
 !pip install python-telegram-bot
-
 !pip install adafruit-io
 
 #adafruit part
