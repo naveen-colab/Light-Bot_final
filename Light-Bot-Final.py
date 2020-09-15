@@ -1,16 +1,17 @@
-#insalling libraries
 !pip install python-telegram-bot
 !pip install adafruit-io
 
-
 #adafruit part
+
 X = os.getenv('X')                     # ADAFRUIT_IO_USERNAME
 Y = os.getenv('Y')                     # ADAFRUIT_IO_KEY
+
 from Adafruit_IO import Client, Feed
 aio = Client(X,Y)
 
 
 #logging exception handler
+
 import logging
 import os
 
@@ -19,8 +20,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
-
-
+#main part
 from telegram.ext import Updater, CommandHandler,MessageHandler, Filters 
 
 def lightoff(bot,update):
@@ -54,11 +54,9 @@ def chooser(bot,update):
                 }
           else:
                 {
-                        bot.send_message(chat_id,text='Invalid Text')
+                        bot.message.reply_text('Invalid Text')
                 }
 
-                
-                
 def main():
   BOT_TOKEN= '1359570647:AAGqrbWWBWa2DDn4uKD39UHACCzDHPMNYpo'
   u = Updater(BOT_TOKEN, use_context=True)
@@ -66,7 +64,6 @@ def main():
   dp.add_handler(MessageHandler(Filters.text, chooser))
   u.start_polling()
   u.idle()
-
-    
+  
 if __name__ == '__main__':
     main()
