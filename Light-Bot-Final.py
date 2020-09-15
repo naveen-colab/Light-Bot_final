@@ -4,8 +4,8 @@
 
 #adafruit part
 
-X = "tarunsridhara21"                     # ADAFRUIT_IO_USERNAME
-Y = "aio_XvYw81SX0fGaUVcAPz1bBzqio6RG"    # ADAFRUIT_IO_KEY
+X = os.getenv("X")                     # ADAFRUIT_IO_USERNAME
+Y = os.getenv("Y")                     # ADAFRUIT_IO_KEY
 
 from Adafruit_IO import Client, Feed
 aio = Client(X,Y)
@@ -57,7 +57,7 @@ def chooser(bot,update):
                 }
 
 def main():
-  BOT_TOKEN= '1359570647:AAGqrbWWBWa2DDn4uKD39UHACCzDHPMNYpo'
+  BOT_TOKEN= os.getenv("BOT_TOKEN")
   u = Updater(BOT_TOKEN, use_context=True)
   dp = u.dispatcher
   dp.add_handler(MessageHandler(Filters.text, chooser))
