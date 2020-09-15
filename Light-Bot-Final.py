@@ -1,15 +1,14 @@
 !pip install python-telegram-bot
-!pip install adafruit-io
 
+!pip install adafruit-io
 
 #adafruit part
 
-X = os.getenv('X')                     # ADAFRUIT_IO_USERNAME
-Y = os.getenv('Y')                     # ADAFRUIT_IO_KEY
+X = "tarunsridhara21"                     # ADAFRUIT_IO_USERNAME
+Y = "aio_XvYw81SX0fGaUVcAPz1bBzqio6RG"    # ADAFRUIT_IO_KEY
 
 from Adafruit_IO import Client, Feed
 aio = Client(X,Y)
-
 
 
 #logging exception handler
@@ -21,8 +20,6 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-#main part
 from telegram.ext import Updater, CommandHandler,MessageHandler, Filters 
 
 def lightoff(bot,update):
