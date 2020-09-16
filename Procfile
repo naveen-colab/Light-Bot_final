@@ -1,1 +1,1 @@
-worker: python Light-Bot-Final.py
+worker: python lightbot.py
